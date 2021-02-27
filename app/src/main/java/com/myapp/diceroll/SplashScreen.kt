@@ -3,6 +3,7 @@ package com.myapp.diceroll
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 
 class SplashScreen : AppCompatActivity() {
@@ -12,7 +13,7 @@ class SplashScreen : AppCompatActivity() {
 
         actionBar?.hide()
 
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
